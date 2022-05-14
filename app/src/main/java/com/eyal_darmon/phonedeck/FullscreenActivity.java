@@ -53,10 +53,11 @@ public class FullscreenActivity extends AppCompatActivity {
         mContentView = binding.fullscreenContent;
 
         // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnClickListener(new View.OnClickListener() {
+        mContentView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                toggle();
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                show();
+                return false;
             }
         });
 
